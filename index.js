@@ -4,8 +4,8 @@ function displayRepos(responseJson, maxResults) {
     console.log(responseJson);
     $('#results-list').empty();
 
-    for (let i = 0; i < responseJson.value.length & i < maxResults; i++) {
-        $('#results-list').append(`<li><h3>${responseJson.value[i].name}</h3><p><a href="${responseJson.value[i].url}"></a></p>`)
+    for (let i = 0; i < responseJson.length & i < maxResults; i++) {
+        $('#results-list').append(`<li><h3>${responseJson[i].name}</h3><a href="${responseJson[i].html_url}">${responseJson[i].url}</a>`)
     }
     $('#results').removeClass('hidden');
 }
